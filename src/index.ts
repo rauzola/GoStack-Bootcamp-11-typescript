@@ -1,11 +1,11 @@
-import express, { request } from "express";
+import express from "express";
+
+import { helloWorld } from "./routes";
 
 const porta = 3333;
 const app = express();
 
-app.get("/", (request, response) => {
-  return response.json({ message: "Hello World" });
-});
+app.get("/", helloWorld);
 
 app.listen(`${porta}`, () => {
   console.log(`Servidor iniciado na porta = ${porta}`);
